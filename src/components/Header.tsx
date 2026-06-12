@@ -32,6 +32,7 @@ export const Header = () => {
                 </button>
             </div>
         </header>
+        <hr className="relative -bottom-2 text-gray-700"/>
     </div>
   )
 }
