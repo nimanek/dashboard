@@ -1,9 +1,12 @@
 import { ChartCard } from "./ChartCard";
+import { RecentOrders } from "./RecentOrders";
+import { RecentOrdersDown } from "./RecentOrdersDown";
 import { StatCard } from "./StatCard";
-import { DailySales } from "./statCardDownData/DailySales";
+import { DailySalesChart } from "./statCardDownData/DailySales";
+import { DiscountedSalesChart } from "./statCardDownData/DiscountedSalesChart";
 import { EarningsBreakdown } from "./statCardDownData/EarningsBreakdown";
 import { MonthlyOrders } from "./statCardDownData/MonthlyOrders";
-import { MonthlySales } from "./statCardDownData/MonthlySales";
+import { MonthlySalesChart } from "./statCardDownData/MonthlySalesChart";
 import { TodaysHeros } from "./statCardDownData/TodaysHeros";
 
 export const Mainside = () => {
@@ -31,14 +34,21 @@ export const Mainside = () => {
                             title="Average Daily Sales"
                             value="2,420"
                             change={2.6}
-                            isPositive={false}
+                            isPositive={true}
                         >
-                            <DailySales />
+                            <DailySalesChart />
                         </StatCard>
                     </div>
                     <div className="col-start-5 col-end-9 row-start-1 row-end-20">
-                        <ChartCard title="Sales this month" desc="Users from all channels" price="14,308" downDesc="another $49,721 to goal" change={4.6} isPositive={true}>
-                            <MonthlySales />
+                        <ChartCard
+                            title="Sales this month"
+                            desc="Users from all channels"
+                            price="14,308"
+                            downDesc="another $49,721 to goal"
+                            change={4.6}
+                            isPositive={true}
+                        >
+                            <MonthlySalesChart />
                         </ChartCard>
                     </div>
                     <div className="col-start-1 col-end-3 row-start-10 row-end-20">
@@ -52,18 +62,32 @@ export const Mainside = () => {
                         </StatCard>
                     </div>
                     <div className="bg-green-400 col-start-3 col-end-5 row-start-10 row-end-20 rounded-md">
-                        <StatCard     //NEEDS FIX (CREATE ANOTHER COMPONENT)
-                            title="New Customers this month"
-                            value="6.3k"
-                            change={2.2}
+                        <StatCard //NEEDS FIX (CREATE ANOTHER COMPONENT)
+                            title="New Customers this month" //NEEDS FIX (CREATE ANOTHER COMPONENT)
+                            value="6.3k" //NEEDS FIX (CREATE ANOTHER COMPONENT)
+                            change={2.2} //NEEDS FIX (CREATE ANOTHER COMPONENT)
                         >
-                            <TodaysHeros />
-                        </StatCard>
+                            <TodaysHeros /> 
+                        </StatCard>  
                     </div>
                     <div className="bg-red-700 col-start-1 col-end-5 row-start-20 row-end-40 rounded-md">
-                        2
+                        <RecentOrders title="Recent Orders">
+                            <RecentOrdersDown />
+                        </RecentOrders>
                     </div>
-                    <div className="bg-red-400 col-start-5 col-end-9 row-start-20 row-end-40 rounded-md"></div>
+                    <div className="col-start-5 col-end-9 row-start-20 row-end-40 rounded-md">
+                        <ChartCard
+                        title="Discounted Product Sales"
+                        desc="Users from all channels"
+                        price="3,500"
+                        downDesc="Total discouned sales this mounth"
+                        change={2.8}
+                        isPositive={true}
+                    >
+                        <DiscountedSalesChart />
+                    </ChartCard>
+                    </div>
+                    
                 </div>
             </div>
         </>

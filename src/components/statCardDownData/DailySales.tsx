@@ -1,9 +1,9 @@
-import React from 'react'
 
-export const DailySales = () => {
+
+export const DailySalesChart = () => {
   return (
     <div>
-        A line chart
+        DailySalesChart WILL BE HERE
     </div>
   )
 }
