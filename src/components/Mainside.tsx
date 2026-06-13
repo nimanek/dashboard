@@ -1,3 +1,4 @@
+import formatNumber from "../../formatNumber";
 import { ChartCard } from "./ChartCard";
 import { RecentOrders } from "./RecentOrders";
 import { RecentOrdersDown } from "./RecentOrdersDown";
@@ -22,7 +23,7 @@ export const Mainside = () => {
                     <div className="col-start-1 col-end-3 row-start-1 row-end-10">
                         <StatCard
                             title="Expected Earnings"
-                            value="69,700"
+                            value={formatNumber(69700)}
                             change={2.2}
                             isPositive={true}
                         >

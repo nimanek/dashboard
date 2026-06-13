@@ -1,4 +1,4 @@
-const formatNumber = (num: number)=>{
+const formatNumber = (num: number )=>{
     return num.toLocaleString("en-US")
 }
 
