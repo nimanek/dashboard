@@ -15,7 +15,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 export const Sidebar = () => {
   return (
     <div>
-        <aside className='bg-[#272f3b] pt-2 text-mist-300'>
+        <aside className='bg-[#272f3b] pt-22 text-mist-300'>
             <nav className='w-[90%] ml-4'>
                 <p className='text-sm text-mist-400 mb-2'>Manage listings</p>
                 <ul className='flex flex-col gap-2'>

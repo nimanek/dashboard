@@ -6,7 +6,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 export const Header = () => {
   return (
-    <div className="bg-[#272f3b] py-2">
+    <div className="bg-[#272f3b] py-2 fixed w-full">
         <header className="container mx-auto flex justify-between items-center">
             <img className="rounded-full" src="https://placehold.co/50" alt="" />
 
