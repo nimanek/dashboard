@@ -19,28 +19,28 @@ export const Header = () => {
             <img className="rounded-full" src="https://placehold.co/50" alt="" />
 
 
-            <form className="flex rounded-4xl bg-[#3f4247] items-center p-2 gap-2 select-none w-70">
+            <form className="flex rounded-4xl dark:bg-[#3f4247] bg-white items-center p-2 gap-2 select-none w-70">
                 <HiMagnifyingGlass color="#99a1af"/>
-                <input className="bg-transparent outline-0 text-sm placeholder-gray-400 text-gray-400 w-full" placeholder="Search..." type="search" />
+                <input className="bg-transparent outline-0 text-sm placeholder-gray-400 dark:text-gray-400 w-full" placeholder="Search..." type="search" />
             </form>
 
 
 
             <div className="flex justify-center gap-6 items-center">
-                <button className="bg-gray-700 rounded-full w-8 h-8 flex justify-center items-center"><FaRegBell size={20} color="#99a1af"/></button>
+                <button className="dark:bg-gray-700 bg-[#eee] rounded-full w-8 h-8 flex justify-center items-center"><FaRegBell size={20} color={`${isDark ? "#99a1af" : "black"}`}/></button>
                 <div className="flex justify-center items-center gap-2">
                     <MdOutlineWbSunny size={20} color={`${isDark? "#99a1af": "black"}`}/>
                     <button onClick={toggleTheme} className="w-10 h-4 relative bg-gray-500 rounded-4xl cursor-pointer"><div className={`${isDark ? "right-0 top-0" : 'left-0 top-0'} transition absolute bg-gray-200 w-4 h-4 rounded-full cursor-pointer`}></div></button>
                     <IoMoonOutline size={20} color={`${isDark? "white": "#99a1af"}`} />
                 </div>
 
-                <button className="flex items-center">
+                <button className="flex items-center cursor-pointer">
                     <img className="rounded-full" src="https://placehold.co/45" alt="" />
                     <MdKeyboardArrowDown size={22} color="#99a1af"/>
                 </button>
             </div>
         </header>
-        <hr className="relative -bottom-2 text-gray-700"/>
+        <hr className="relative -bottom-2 dark:text-gray-700 text-white"/>
     </div>
   )
 }
