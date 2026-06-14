@@ -6,7 +6,7 @@ import { StatCard } from "./StatCard";
 import { DailySalesChart } from "./statCardDownData/DailySales";
 import { DiscountedSalesChart } from "./statCardDownData/DiscountedSalesChart";
 import { EarningsBreakdown } from "./statCardDownData/EarningsBreakdown";
-import { MonthlyOrders } from "./statCardDownData/MonthlyOrders";
+import { MonthlyOrdersChart } from "./statCardDownData/MonthlyOrdersChart";
 import { MonthlySalesChart } from "./statCardDownData/MonthlySalesChart";
 import { TodaysHeros } from "./statCardDownData/TodaysHeros";
 
@@ -59,7 +59,7 @@ export const Mainside = () => {
                             change={2.2}
                             isPositive={false}
                         >
-                            <MonthlyOrders />
+                            <MonthlyOrdersChart percentage={68} toGoal={1050}/>
                         </StatCard>
                     </div>
                     <div className="bg-green-400 col-start-3 col-end-5 row-start-10 row-end-20 rounded-md">
