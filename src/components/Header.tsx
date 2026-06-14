@@ -3,10 +3,18 @@ import { FaRegBell } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { IoMoonOutline } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
+
 
 export const Header = () => {
+
+    const {isDark, toggleTheme} = useContext(ThemeContext)
+
+    console.log(isDark)
+
   return (
-    <div className="bg-[#272f3b] py-2 fixed w-full z-50">
+    <div className="dark:bg-[#272f3b] bg-[#ccc] py-2 fixed w-full z-50">
         <header className="container mx-auto flex justify-between items-center">
             <img className="rounded-full" src="https://placehold.co/50" alt="" />
 
@@ -21,9 +29,9 @@ export const Header = () => {
             <div className="flex justify-center gap-6 items-center">
                 <button className="bg-gray-700 rounded-full w-8 h-8 flex justify-center items-center"><FaRegBell size={20} color="#99a1af"/></button>
                 <div className="flex justify-center items-center gap-2">
-                    <MdOutlineWbSunny size={20} color="#99a1af"/>
-                    <button className="w-10 h-4 bg-gray-500 rounded-4xl"><div className="bg-gray-200 w-4 h-4 rounded-full cursor-pointer"></div></button>
-                    <IoMoonOutline size={20} color="#99a1af"/>
+                    <MdOutlineWbSunny size={20} color={`${isDark? "#99a1af": "black"}`}/>
+                    <button onClick={toggleTheme} className="w-10 h-4 relative bg-gray-500 rounded-4xl cursor-pointer"><div className={`${isDark ? "right-0 top-0" : 'left-0 top-0'} transition absolute bg-gray-200 w-4 h-4 rounded-full cursor-pointer`}></div></button>
+                    <IoMoonOutline size={20} color={`${isDark? "white": "#99a1af"}`} />
                 </div>
 
                 <button className="flex items-center">

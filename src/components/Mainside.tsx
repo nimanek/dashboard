@@ -64,14 +64,14 @@ export const Mainside = () => {
                     </div>
                     <div className="col-start-3 col-end-5 row-start-10 row-end-20 rounded-md">
                         <StatCard //NEEDS FIX (CREATE ANOTHER COMPONENT)
-                            title="New Customers this month" //NEEDS FIX (CREATE ANOTHER COMPONENT)
-                            value="6.3k" //NEEDS FIX (CREATE ANOTHER COMPONENT)
-                            change={2.2} //NEEDS FIX (CREATE ANOTHER COMPONENT)
+                            title="The workers are working🚧" //NEEDS FIX (CREATE ANOTHER COMPONENT)
+                            value="🚧" //NEEDS FIX (CREATE ANOTHER COMPONENT)
+                            change={0} //NEEDS FIX (CREATE ANOTHER COMPONENT)
                         >
                             <TodaysHeros /> 
                         </StatCard>  
                     </div>
-                    <div className="bg-red-700 col-start-1 col-end-5 row-start-20 row-end-40 rounded-md">
+                    <div className="col-start-1 col-end-5 row-start-20 row-end-40 rounded-md">
                         <RecentOrders title="Recent Orders">
                             <RecentOrdersDown />
                         </RecentOrders>
