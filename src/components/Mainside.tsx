@@ -62,7 +62,7 @@ export const Mainside = () => {
                             <MonthlyOrdersChart percentage={68} toGoal={1050}/>
                         </StatCard>
                     </div>
-                    <div className="bg-green-400 col-start-3 col-end-5 row-start-10 row-end-20 rounded-md">
+                    <div className="col-start-3 col-end-5 row-start-10 row-end-20 rounded-md">
                         <StatCard //NEEDS FIX (CREATE ANOTHER COMPONENT)
                             title="New Customers this month" //NEEDS FIX (CREATE ANOTHER COMPONENT)
                             value="6.3k" //NEEDS FIX (CREATE ANOTHER COMPONENT)
@@ -83,9 +83,9 @@ export const Mainside = () => {
                         price="3,500"
                         downDesc="Total discouned sales this mounth"
                         change={2.8}
-                        isPositive={true}
+                        isPositive={false}
                     >
-                        <DiscountedSalesChart />
+                        <DiscountedSalesChart isPositive={false}/>
                     </ChartCard>
                     </div>
                     
