@@ -15,11 +15,11 @@ import { IoSettingsOutline } from "react-icons/io5";
 export const Sidebar = () => {
   return (
     <div>
-        <aside className='bg-[#272f3b] pt-22 text-mist-300'>
+        <aside className='dark:bg-[#272f3b] bg-[#c6c6c6] pt-22 dark:text-mist-300'>
             <nav className='w-[90%] ml-4'>
-                <p className='text-sm text-mist-400 mb-2'>Manage listings</p>
+                <p className='text-sm dark:text-mist-400 text-mist-700 mb-2'>Manage listings</p>
                 <ul className='flex flex-col gap-2'>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <RxDashboard />
@@ -27,7 +27,7 @@ export const Sidebar = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <BsTag />
@@ -36,7 +36,7 @@ export const Sidebar = () => {
                             <MdKeyboardArrowDown/>
                         </a>
                     </li>
-                   <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                   <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <BsHandbag />
@@ -45,7 +45,7 @@ export const Sidebar = () => {
                             <MdKeyboardArrowDown/>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <CgProfile />
@@ -54,7 +54,7 @@ export const Sidebar = () => {
                             <MdKeyboardArrowDown/>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <MdOutlineInsertChart />
@@ -62,7 +62,7 @@ export const Sidebar = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <IoChatbubbleOutline />
@@ -70,7 +70,7 @@ export const Sidebar = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <IoWalletOutline />
@@ -78,7 +78,7 @@ export const Sidebar = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <ImProfile />
@@ -86,7 +86,7 @@ export const Sidebar = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <PiFire />
@@ -94,7 +94,7 @@ export const Sidebar = () => {
                             </div>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <IoDiamondOutline />
@@ -103,7 +103,7 @@ export const Sidebar = () => {
                             <MdKeyboardArrowDown/>
                         </a>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-cyan-600 hover:bg-[#4a525d]'>
+                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
                         <a className="flex justify-between items-center py-2" href="#">
                             <div className="flex items-center gap-2">
                                 <IoSettingsOutline />
