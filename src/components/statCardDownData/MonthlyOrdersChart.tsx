@@ -2,9 +2,9 @@ import formatNumber from "../../../formatNumber";
 
 export const MonthlyOrdersChart = ({ toGoal, percentage }) => {
     return (
-        <div className="bg-slate-800 rounded-xl p-6 mt-2">
+        <div className="dark:bg-slate-800 bg-[#ebebeb] rounded-xl p-6 mt-2">
             <div className="mt-6">
-                <div className="flex justify-between text-sm text-gray-400 mb-2">
+                <div className="flex justify-between text-sm dark:text-gray-400 text-gray-600 mb-2">
                     <span>{formatNumber(toGoal)} to Goal</span>
                     <span>{percentage}%</span>
                 </div>

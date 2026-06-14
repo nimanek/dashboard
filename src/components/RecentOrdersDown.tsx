@@ -112,7 +112,7 @@ export const RecentOrdersDown = () => {
                     <button
                         key={cat.id}
                         onClick={() => setActiveCategory(cat.id)}
-                        className={`border flex flex-col justify-center items-center p-4 w-36 cursor-pointer rounded ${activeCategory === cat.id ? "border-cyan-600 text-cyan-600" : "border-gray-500 text-gray-500"}`}
+                        className={`border flex flex-col justify-center items-center p-4 w-36 cursor-pointer rounded ${activeCategory === cat.id ? "border-cyan-600 text-cyan-600" : "border-gray-500 dark:text-gray-500"}`}
                     >
                         <span>{cat.icon}</span>
                         <p>{cat.label}</p>
@@ -124,7 +124,7 @@ export const RecentOrdersDown = () => {
             <div className="max-h-60 overflow-y-auto custom-scrollbar">
                 <table className="w-full border-collapse mt-6">
                     <thead>
-                        <tr className="font-bold text-gray-300">
+                        <tr className="font-bold dark:text-gray-300 text-gray-700">
                             <th className="text-left p-2">Item</th>
                             <th className="text-left p-2">Quantity</th>
                             <th className="text-left p-2">Price</th>
@@ -133,7 +133,7 @@ export const RecentOrdersDown = () => {
                     </thead>
                     <tbody>
                         {orders[activeCategory].map((order) => (
-                            <tr className="border-b text-gray-400">
+                            <tr className="border-b dark:text-gray-400 text-gray-700">
                                 <td className="p-2">
                                     <img
                                         className="rounded"

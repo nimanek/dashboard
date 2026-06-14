@@ -15,8 +15,8 @@ export const Mainside = () => {
         <>
             <div className="mx-6 mt-4">
                 <div className="my-4">
-                    <h3 className="text-white text-2xl">eCommerce Dashboard</h3>
-                    <p className="text-gray-600 text-sm">Home - Dashboard</p>
+                    <h3 className="dark:text-white text-2xl">eCommerce Dashboard</h3>
+                    <p className="dark:text-gray-600 text-mist-700 text-sm">Home - Dashboard</p>
                 </div>
 
                 <div className="grid grid-cols-8 grid-rows-6 gap-5">

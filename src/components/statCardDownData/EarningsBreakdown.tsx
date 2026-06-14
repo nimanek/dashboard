@@ -39,14 +39,14 @@ export const EarningsBreakdown = () => {
                 </div>
                 <div className="flex flex-col">
                     {datas.map((data) => (
-                        <div className="flex justify-evenly items-center text-gray-300/70 gap-2">
+                        <div className="flex justify-evenly items-center dark:text-gray-300/70 gap-2">
                             <>
                                 <span
                                     style={{ backgroundColor: data.color }}
                                     className="w-2 h-2 rounded-full"
                                 ></span>
                                 <div className="text-sm">{data.name}</div>
-                                <div className="text-white">
+                                <div className="dark:text-white text-black">
                                     ${formatNumber(data.value)}
                                 </div>
                             </>
