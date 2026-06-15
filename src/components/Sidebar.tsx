@@ -10,110 +10,104 @@ import { ImProfile } from "react-icons/im";
 import { PiFire } from "react-icons/pi";
 import { IoDiamondOutline } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
-
+import { Link, useLocation } from "react-router-dom";
 
 export const Sidebar = () => {
-  return (
-    <div>
-        <aside className='dark:bg-[#272f3b] bg-[#c6c6c6] pt-22 dark:text-mist-300'>
-            <nav className='w-[90%] ml-4'>
-                <p className='text-sm dark:text-mist-400 text-mist-700 mb-2'>Manage listings</p>
-                <ul className='flex flex-col gap-2'>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
+    const location = useLocation();
+    const menuItems = [
+        { path: "/", icon: <RxDashboard />, label: "Dashboard", subItems: [] },
+        {
+            path: "/products",
+            icon: <BsTag />,
+            label: "Products",
+            subItems: ["All Products", "Add Product", "Categories"],
+        },
+        {
+            path: "/orders",
+            icon: <BsHandbag />,
+            label: "Orders",
+            subItems: ["All Orders", "Pending", "Completed"],
+        },
+        {
+            path: "/customers",
+            icon: <CgProfile />,
+            label: "Customers",
+            subItems: ["Remove Customer", "Add Customer"],
+        },
+        {
+            path: "/statics",
+            icon: <MdOutlineInsertChart />,
+            label: "Statics",
+            subItems: [],
+        },
+        {
+            path: "/reviews",
+            icon: <IoChatbubbleOutline />,
+            label: "Reviews",
+            subItems: [],
+        },
+        {
+            path: "/transactions",
+            icon: <IoWalletOutline />,
+            label: "Transactions",
+            subItems: [],
+        },
+        {
+            path: "/sellers",
+            icon: <ImProfile />,
+            label: "Sellers",
+            subItems: [],
+        },
+        {
+            path: "/hot-offers",
+            icon: <PiFire />,
+            label: "Hot offers",
+            subItems: [],
+        },
+        {
+            path: "/appearance",
+            icon: <IoDiamondOutline />,
+            label: "Appearance",
+            subItems: [],
+        },
+        {
+            path: "/settings",
+            icon: <IoSettingsOutline />,
+            label: "Settings",
+            subItems: ["Apearance", "Security"],
+        },
+    ];
+
+    return (
+        <div>
+            <ul className="flex flex-col dark:bg-[#272f3b] bg-[#c6c6c6] gap-2 mt-17 p-2">
+                <p className="text-sm dark:text-mist-400 text-mist-700 my-4">
+                    Manage listings
+                </p>
+                {menuItems.map((item) => (
+                    <li
+                        key={item.path}
+                        className={`rounded-sm px-4 py-1 text-sm text-[#47494b] dark:text-[#c2c2c2] hover:text-[#2d2d2d] hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d] ${
+                            location.pathname === item.path
+                                ? "dark:bg-[#4a525d] dark:text-cyan-400 bg-[#e1e1e1] text-black"
+                                : ""
+                        }`}
+                    >
+                        <Link
+                            className="flex justify-between items-center py-2"
+                            to={item.path}
+                        >
                             <div className="flex items-center gap-2">
-                                <RxDashboard />
-                                <span>Dashboard</span> 
+                                {item.icon}
+                                <span>{item.label}</span>
                             </div>
-                        </a>
+                            {item.subItems.length > 0 && (
+                                <MdKeyboardArrowDown />
+                            )}
+                        </Link>
                     </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <BsTag />
-                                <span>Products</span>   
-                            </div>
-                            <MdKeyboardArrowDown/>
-                        </a>
-                    </li>
-                   <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <BsHandbag />
-                                <span>Orders</span> 
-                            </div>
-                            <MdKeyboardArrowDown/>
-                        </a>
-                    </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <CgProfile />
-                                <span>Customers</span> 
-                            </div>
-                            <MdKeyboardArrowDown/>
-                        </a>
-                    </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <MdOutlineInsertChart />
-                                <span>Statics</span> 
-                            </div>
-                        </a>
-                    </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <IoChatbubbleOutline />
-                                <span>Reviews</span> 
-                            </div>
-                        </a>
-                    </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <IoWalletOutline />
-                                <span>Transactions</span> 
-                            </div>
-                        </a>
-                    </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <ImProfile />
-                                <span>Sellers</span> 
-                            </div>
-                        </a>
-                    </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <PiFire />
-                                <span>Hot offers</span> 
-                            </div>
-                        </a>
-                    </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <IoDiamondOutline />
-                                <span>Appearance</span> 
-                            </div>
-                            <MdKeyboardArrowDown/>
-                        </a>
-                    </li>
-                    <li className='rounded-sm px-4 py-1 text-sm hover:text-black hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d]'>
-                        <a className="flex justify-between items-center py-2" href="#">
-                            <div className="flex items-center gap-2">
-                                <IoSettingsOutline />
-                                <span>Settings</span> 
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-    </div>
-  )
-}
+                ))}
+            </ul>
+        </div>
+    );
+};

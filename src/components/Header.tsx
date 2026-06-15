@@ -30,7 +30,7 @@ export const Header = () => {
                 <button className="dark:bg-gray-700 bg-[#eee] rounded-full w-8 h-8 flex justify-center items-center"><FaRegBell size={20} color={`${isDark ? "#99a1af" : "black"}`}/></button>
                 <div className="flex justify-center items-center gap-2">
                     <MdOutlineWbSunny size={20} color={`${isDark? "#99a1af": "black"}`}/>
-                    <button onClick={toggleTheme} className="w-10 h-4 relative bg-gray-500 rounded-4xl cursor-pointer"><div className={`${isDark ? "right-0 top-0" : 'left-0 top-0'} transition absolute bg-gray-200 w-4 h-4 rounded-full cursor-pointer`}></div></button>
+                    <button onClick={toggleTheme} className="w-10 h-4 relative bg-gray-500 rounded-4xl cursor-pointer"><div className={`${isDark ? "right-0 top-0" : 'left-0 top-0'}absolute bg-gray-200 w-4 h-4 rounded-full cursor-pointer`}></div></button>
                     <IoMoonOutline size={20} color={`${isDark? "white": "#99a1af"}`} />
                 </div>
 
