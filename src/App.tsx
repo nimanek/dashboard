@@ -7,6 +7,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { Statics } from "./pages/Statics";
 import { Reviews } from "./pages/Reviews";
 import { Transactions } from "./pages/Transactions";
+import { Sellers } from "./pages/Sellers";
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                             <Route  path="/statics" element={<Statics />}/>
                             <Route  path="/reviews" element={<Reviews />}/>
                             <Route  path="/transactions" element={<Transactions />}/>
+                            <Route  path="/sellers" element={<Sellers />}/>
                         </Routes>
                     </div>
                 </div>
