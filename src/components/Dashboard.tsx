@@ -10,7 +10,7 @@ import { MonthlyOrdersChart } from "./statCardDownData/MonthlyOrdersChart";
 import { MonthlySalesChart } from "./statCardDownData/MonthlySalesChart";
 import { TodaysHeros } from "./statCardDownData/TodaysHeros";
 
-export const Mainside = () => {
+export const Dashboard = () => {
     return (
         <>
             <div className="mx-6 mt-4">

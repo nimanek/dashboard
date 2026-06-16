@@ -1,8 +1,11 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/Header";
-import { Mainside } from "./components/Mainside";
+import { Dashboard } from "./components/Dashboard";
 import { Sidebar } from "./components/Sidebar";
 import { ThemeProvider } from "./context/ThemeContext";
+import { Statics } from "./pages/Statics";
+import { Reviews } from "./pages/Reviews";
 
 function App() {
     return (
@@ -14,7 +17,11 @@ function App() {
                         <Sidebar />
                     </div>
                     <div className="col-span-10 mt-16">
-                        <Mainside />
+                        <Routes>
+                            <Route  path="/" element={<Dashboard />}/>
+                            <Route  path="/statics" element={<Statics />}/>
+                            <Route  path="/reviews" element={<Reviews />}/>
+                        </Routes>
                     </div>
                 </div>
             </ThemeProvider>
