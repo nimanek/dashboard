@@ -6,6 +6,7 @@ import { Sidebar } from "./components/Sidebar";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Statics } from "./pages/Statics";
 import { Reviews } from "./pages/Reviews";
+import { Transactions } from "./pages/Transactions";
 
 function App() {
     return (
@@ -20,7 +21,8 @@ function App() {
                         <Routes>
                             <Route  path="/" element={<Dashboard />}/>
                             <Route  path="/statics" element={<Statics />}/>
-                            <Route  path="/reviews" element={<Reviews/>}/>
+                            <Route  path="/reviews" element={<Reviews />}/>
+                            <Route  path="/transactions" element={<Transactions />}/>
                         </Routes>
                     </div>
                 </div>
