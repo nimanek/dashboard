@@ -9,6 +9,7 @@ import { Reviews } from "./pages/Reviews";
 import { Transactions } from "./pages/Transactions";
 import { Sellers } from "./pages/Sellers";
 import { HotOffers } from "./pages/HotOffers";
+import { Appearance } from "./pages/Appearance";
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                             <Route  path="/transactions" element={<Transactions />}/>
                             <Route  path="/sellers" element={<Sellers />}/>
                             <Route  path="/hot-offers" element={<HotOffers />}/>
+                            <Route  path="/appearance" element={<Appearance />}/>
                         </Routes>
                     </div>
                 </div>
