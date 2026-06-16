@@ -39,7 +39,7 @@ export const EarningsBreakdown = () => {
                 </div>
                 <div className="flex flex-col">
                     {datas.map((data) => (
-                        <div className="flex justify-evenly items-center dark:text-gray-300/70 gap-2">
+                        <div key={data.name} className="flex justify-evenly items-center dark:text-gray-300/70 gap-2">
                             <>
                                 <span
                                     style={{ backgroundColor: data.color }}

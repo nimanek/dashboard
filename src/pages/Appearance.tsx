@@ -2,6 +2,6 @@
 
 export const Appearance = () => {
   return (
-    <div>Appearance</div>
+    <div className="text-white text-5xl">Appearance</div>
   )
 }
