@@ -135,7 +135,7 @@ export const RecentOrdersDown = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {orders[activeCategory].map(({order, index}: any) => (
+                        {orders[activeCategory].map((order, index) => (
                             <tr key={index} className="border-b dark:text-gray-400 text-gray-700">
                                 <td className="p-2">
                                     <img
