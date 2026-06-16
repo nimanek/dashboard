@@ -42,7 +42,7 @@ export const MonthlySalesChart = () => {
           contentStyle={{ backgroundColor: '#1e293b', border: 'none', borderRadius: '8px' }}
           labelStyle={{ color: '#94a3b8' }}
           itemStyle={{ color: '#22d3ee' }}
-          formatter={(value)=> [`$${formatNumber(value)} Sales`]}
+          formatter={(value)=> [`$${formatNumber(value as number)} Sales`]}
         />
         <Area 
           type="monotone" 

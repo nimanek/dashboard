@@ -1,5 +1,12 @@
 
-export const RecentOrders = ({title, children}) => {
+
+
+type Props = {
+    title: string;
+    children: React.ReactNode;
+}
+
+export const RecentOrders = ({title, children}: Props) => {
     return (
         <div>
             <div className="dark:bg-slate-700 bg-[#c6c6c6] p-4 h-100 rounded-md">

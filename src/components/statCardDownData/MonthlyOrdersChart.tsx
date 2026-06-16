@@ -1,6 +1,12 @@
 import formatNumber from "../../../formatNumber";
 
-export const MonthlyOrdersChart = ({ toGoal, percentage }) => {
+
+type Props={
+    toGoal: number;
+    percentage: number;
+}
+
+export const MonthlyOrdersChart = ({ toGoal, percentage }: Props) => {
     return (
         <div className="dark:bg-slate-800 bg-[#ebebeb] rounded-xl p-6 mt-2">
             <div className="mt-6">

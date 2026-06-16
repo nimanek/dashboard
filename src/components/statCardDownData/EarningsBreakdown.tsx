@@ -22,9 +22,9 @@ export const EarningsBreakdown = () => {
                     stroke="none"
                 >
                     {datas.map((data, index) => (
-                        <>
-                            <Cell key={index} fill={data.color} />
-                        </>
+                        <div key={index}>
+                            <Cell fill={data.color} />
+                        </div>
                     ))}
                 </Pie>
             </PieChart>

@@ -1,8 +1,11 @@
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import formatNumber from "../../../formatNumber"
 
+type Props = {
+  isPositive: boolean;
+}
 
-export const DiscountedSalesChart = ({isPositive}) => {
+export const DiscountedSalesChart = ({isPositive}: Props) => {
 
   const color= isPositive ? "green" : 'red'
   const data = [
@@ -45,7 +48,7 @@ export const DiscountedSalesChart = ({isPositive}) => {
           contentStyle={{ backgroundColor: '#1e293b', border: 'none', borderRadius: '8px' }}
           labelStyle={{ color: '#94a3b8' }}
           itemStyle={{ color }}
-          formatter={(value) => [`$${formatNumber(value)}`, 'Sales']}
+          formatter={(value) => [`$${formatNumber(value as number)}`, 'Sales']}
         />
         <Area
           type="monotone" 

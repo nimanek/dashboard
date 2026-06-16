@@ -2,12 +2,15 @@ import { CiHeadphones } from "react-icons/ci";
 import { GiRunningShoe } from "react-icons/gi";
 import { FaTshirt } from "react-icons/fa";
 import { FiWatch } from "react-icons/fi";
-import { useState } from "react";
+import { useState, type JSX } from "react";
+
+
+type CategoryKey = 'headphones' | 'shoes' | 'tshirt' | 'watch'
 
 export const RecentOrdersDown = () => {
-    const [activeCategory, setActiveCategory] = useState("headphones");
+    const [activeCategory, setActiveCategory] = useState<CategoryKey>("headphones");
 
-    const categories = [
+    const categories: {id: CategoryKey, label:string, icon: JSX.Element}[] = [
         { id: "headphones", label: "Headphones", icon: <CiHeadphones /> },
         { id: "shoes", label: "Shoes", icon: <GiRunningShoe /> },
         { id: "tshirt", label: "T-shirt", icon: <FaTshirt /> },
@@ -132,7 +135,7 @@ export const RecentOrdersDown = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {orders[activeCategory].map((order, index) => (
+                        {orders[activeCategory].map(({order, index}: any) => (
                             <tr key={index} className="border-b dark:text-gray-400 text-gray-700">
                                 <td className="p-2">
                                     <img

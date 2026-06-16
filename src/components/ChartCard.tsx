@@ -1,7 +1,17 @@
 import { IoIosArrowRoundUp } from "react-icons/io";
 import { IoIosArrowRoundDown } from "react-icons/io";
 
-export const ChartCard = ({children, title,change,isPositive, desc, price,downDesc}) => {
+type Props = {
+    children: React.ReactNode;
+    title: string;
+    change: number;
+    isPositive: boolean;
+    desc: string;
+    price: string;
+    downDesc: string
+}
+
+export const ChartCard = ({children, title,change,isPositive, desc, price,downDesc}:Props) => {
     return (
         <div>
             <div className="dark:bg-slate-700 bg-[#c6c6c6] p-4 h-100 rounded-md">
