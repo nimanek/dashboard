@@ -11,8 +11,12 @@ import { PiFire } from "react-icons/pi";
 import { IoDiamondOutline } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
+import { FaArrowDown } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
+import { useState } from "react";
 
 export const Sidebar = () => {
+    const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
     const menuItems = [
         { path: "/", icon: <RxDashboard />, label: "Dashboard", subItems: [] },
@@ -78,9 +82,56 @@ export const Sidebar = () => {
         },
     ];
 
+    const handleResponsiveOpenMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <div>
-            <ul className="flex flex-col dark:bg-[#272f3b] bg-[#c6c6c6] gap-2 mt-17 p-2">
+            {true && (
+                <>
+                    <div>
+                        <ul className="flex flex-col gap-2 mt-17 p-2">
+                            {isOpen ? (
+                                <button onClick={handleResponsiveOpenMenu}>
+                                    <FaArrowDown />
+                                </button>
+                            ) : (
+                                <div className=" w-full">
+                                    <button onClick={handleResponsiveOpenMenu}>
+                                    <FaArrowUp />
+                                    </button>
+                                    {menuItems.map((item) => (
+                                        <li
+                                            key={item.path}
+                                            className={`rounded-sm px-4 py-1 text-2xl text-[#47494b] dark:text-[#c2c2c2] hover:text-[#2d2d2d] hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d] ${
+                                                location.pathname === item.path
+                                                    ? "dark:bg-[#4a525d] dark:text-cyan-400 bg-[#e1e1e1] text-black"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <Link
+                                                className="flex justify-between items-center py-2"
+                                                to={item.path}
+                                            >
+                                                <div className="flex items-center gap-2">
+                                                    {item.icon}
+                                                </div>
+                                                {item.subItems.length > 0 && (
+                                                    <MdKeyboardArrowDown />
+                                                )}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </div>
+                            )}
+                        </ul>
+                    </div>
+                </>
+            )}
+
+
+            {false && <ul className="flex flex-col dark:bg-[#272f3b] bg-[#c6c6c6] gap-2 mt-17 p-2">
                 <p className="text-sm dark:text-mist-400 text-mist-700 my-4">
                     Manage listings
                 </p>
@@ -107,7 +158,7 @@ export const Sidebar = () => {
                         </Link>
                     </li>
                 ))}
-            </ul>
+            </ul>}
         </div>
     );
 };
