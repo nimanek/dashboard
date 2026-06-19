@@ -13,10 +13,12 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [mobileSize, setMobileSize] = useState(true);
+
     const location = useLocation();
     const menuItems = [
         { path: "/", icon: <RxDashboard />, label: "Dashboard", subItems: [] },
@@ -86,20 +88,33 @@ export const Sidebar = () => {
         setIsOpen(!isOpen);
     };
 
+    
+    const handleScreen = ()=>{
+        setMobileSize(window.innerWidth < 1000)
+    }
+
+    useEffect(() => {
+        handleScreen()
+        window.addEventListener('resize', handleScreen)
+        return () => window.removeEventListener('resize', handleScreen)
+        }, [])
+    
+
     return (
         <div>
-            {true && (
-                <>
+            {
+                mobileSize ? 
+                (<>
                     <div>
                         <ul className="flex flex-col gap-2 mt-17 p-2">
                             {isOpen ? (
-                                <button onClick={handleResponsiveOpenMenu}>
+                                <button className="text-white" onClick={handleResponsiveOpenMenu}>
                                     <FaArrowDown />
                                 </button>
                             ) : (
                                 <div className=" w-full">
-                                    <button onClick={handleResponsiveOpenMenu}>
-                                    <FaArrowUp />
+                                    <button className="text-white" onClick={handleResponsiveOpenMenu}>
+                                        <FaArrowUp />
                                     </button>
                                     {menuItems.map((item) => (
                                         <li
@@ -127,38 +142,37 @@ export const Sidebar = () => {
                             )}
                         </ul>
                     </div>
-                </>
-            )}
-
-
-            {false && <ul className="flex flex-col dark:bg-[#272f3b] bg-[#c6c6c6] gap-2 mt-17 p-2">
-                <p className="text-sm dark:text-mist-400 text-mist-700 my-4">
-                    Manage listings
-                </p>
-                {menuItems.map((item) => (
-                    <li
-                        key={item.path}
-                        className={`rounded-sm px-4 py-1 text-sm text-[#47494b] dark:text-[#c2c2c2] hover:text-[#2d2d2d] hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d] ${
-                            location.pathname === item.path
-                                ? "dark:bg-[#4a525d] dark:text-cyan-400 bg-[#e1e1e1] text-black"
-                                : ""
-                        }`}
-                    >
-                        <Link
-                            className="flex justify-between items-center py-2"
-                            to={item.path}
+                </>)
+                :
+                ( <ul className="flex flex-col dark:bg-[#272f3b] bg-[#c6c6c6] gap-2 mt-17 p-2">
+                    <p className="text-sm dark:text-mist-400 text-mist-700 my-4">
+                        Manage listings
+                    </p>
+                    {menuItems.map((item) => (
+                        <li
+                            key={item.path}
+                            className={`rounded-sm px-4 py-1 text-sm text-[#47494b] dark:text-[#c2c2c2] hover:text-[#2d2d2d] hover:bg-[#e1e1e1] dark:hover:text-cyan-600 dark:hover:bg-[#4a525d] ${
+                                location.pathname === item.path
+                                    ? "dark:bg-[#4a525d] dark:text-cyan-400 bg-[#e1e1e1] text-black"
+                                    : ""
+                            }`}
                         >
-                            <div className="flex items-center gap-2">
-                                {item.icon}
-                                <span>{item.label}</span>
-                            </div>
-                            {item.subItems.length > 0 && (
-                                <MdKeyboardArrowDown />
-                            )}
-                        </Link>
-                    </li>
-                ))}
-            </ul>}
+                            <Link
+                                className="flex justify-between items-center py-2"
+                                to={item.path}
+                            >
+                                <div className="flex items-center gap-2">
+                                    {item.icon}
+                                    <span>{item.label}</span>
+                                </div>
+                                {item.subItems.length > 0 && (
+                                    <MdKeyboardArrowDown />
+                                )}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>)
+            }
         </div>
     );
 };
