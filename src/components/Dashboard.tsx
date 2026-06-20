@@ -12,15 +12,15 @@ import { TodaysHeros } from "./statCardDownData/TodaysHeros";
 
 export const Dashboard = () => {
     return (
-        <>
+        <div>
             <div className="mx-6 mt-4">
                 <div className="my-4">
                     <h3 className="dark:text-white text-2xl">eCommerce Dashboard</h3>
                     <p className="dark:text-gray-600 text-mist-700 text-sm">Home - Dashboard</p>
                 </div>
 
-                <div className="grid grid-cols-8 grid-rows-6 gap-5">
-                    <div className="col-start-1 col-end-3 row-start-1 row-end-10">
+                <div className="md:grid md:grid-cols-8 flex flex-col md:grid-rows-6 gap-5">
+                    <div className="col-start-1 md:col-end-3 row-start-1 row-end-10">
                         <StatCard
                             title="Expected Earnings"
                             value={formatNumber(69700)}
@@ -91,6 +91,6 @@ export const Dashboard = () => {
                     
                 </div>
             </div>
-        </>
+        </div>
     );
 };
