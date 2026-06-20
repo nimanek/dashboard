@@ -3,13 +3,27 @@ import { FaRegBell } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { IoMoonOutline } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 
 export const Header = () => {
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const searchRef = useRef<HTMLFormElement>(null);
 
     const {isDark, toggleTheme} = useContext(ThemeContext)
+
+    useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
 
 
   return (
@@ -18,9 +32,9 @@ export const Header = () => {
             <img className="rounded-full hidden md:block" src="https://placehold.co/50" alt="" />
 
 
-            <form className="flex rounded-4xl dark:bg-[#3f4247] bg-white items-center p-2 gap-2 select-none w-70">
-                <HiMagnifyingGlass color="#99a1af"/>
-                <input className="bg-transparent outline-0 text-sm placeholder-gray-400 dark:text-gray-400 w-full" placeholder="Search..." type="search" />
+            <form ref={searchRef} className={`flex rounded-4xl dark:bg-[#3f4247] bg-white items-center p-2 gap-2 select-none w-10 md:w-70 ml-[2%] md:ml-0 transition-all ${isSearchOpen ? "w-50" : ''}`}>
+                    <HiMagnifyingGlass className="shrink-0" onClick={()=> setIsSearchOpen(true)} color="#99a1af"/>
+                <input className={`bg-transparent outline-0 text-sm placeholder-gray-400 dark:text-gray-400 w-full`} placeholder="Search..." type="search" />
             </form>
 
 
