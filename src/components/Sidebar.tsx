@@ -133,7 +133,7 @@ export const Sidebar = () => {
                                                     {item.icon}
                                                 </div>
                                                 {item.subItems.length > 0 && (
-                                                    <MdKeyboardArrowDown/>
+                                                    <MdKeyboardArrowDown />
                                                 )}
                                             </Link>
                                         </li>
