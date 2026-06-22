@@ -109,8 +109,8 @@ export const RecentOrdersDown = () => {
     };
 
     return (
-        <div className="flex flex-col">
-            <div className="flex justify-around mt-6 gap-3">
+        <div className="flex flex-col gap-2">
+            <div className="flex justify-around mt-6 gap-3 overflow-auto">
                 {categories.map((cat) => (
                     <button
                         key={cat.id}
@@ -124,7 +124,7 @@ export const RecentOrdersDown = () => {
             </div>
 
             {/* down table */}
-            <div className="max-h-60 overflow-y-auto custom-scrollbar">
+            <div className="max-h-50 md:max-h-60 overflow-y-auto custom-scrollbar">
                 <table className="w-full border-collapse mt-6">
                     <thead>
                         <tr className="font-bold dark:text-gray-300 text-gray-700">
