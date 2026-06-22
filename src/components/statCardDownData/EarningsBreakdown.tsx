@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Sector } from "recharts";
 import formatNumber from "../../../formatNumber";
 
 export const EarningsBreakdown = () => {
@@ -10,8 +10,6 @@ export const EarningsBreakdown = () => {
 
     function EarningsDonut() {
         return (
-
-          // recharts for showing chart
             <PieChart width={80} height={80}>
                 <Pie
                     data={datas}
@@ -20,13 +18,14 @@ export const EarningsBreakdown = () => {
                     outerRadius={32}
                     paddingAngle={3}
                     stroke="none"
-                >
-                    {datas.map((data, index) => (
-                        <div key={index}>
-                            <Cell fill={data.color} />
-                        </div>
-                    ))}
-                </Pie>
+                    shape={(props) => {
+                        // Extracts the color from the current data entry
+                        const fill = props.payload.color;
+
+                        // Renders the built-in Sector shape with the correct color
+                        return <Sector {...props} fill={fill} />;
+                    }}
+                />
             </PieChart>
         );
     }
@@ -39,14 +38,17 @@ export const EarningsBreakdown = () => {
                 </div>
                 <div className="flex flex-col">
                     {datas.map((data) => (
-                        <div key={data.name} className="flex justify-evenly items-center dark:text-gray-300/70 gap-2">
+                        <div
+                            key={data.name}
+                            className="flex justify-evenly items-center dark:text-gray-300/70 gap-2"
+                        >
                             <>
                                 <span
                                     style={{ backgroundColor: data.color }}
                                     className="w-2 h-2 rounded-full"
                                 ></span>
                                 <div className="text-sm">{data.name}</div>
-                                <div className="dark:text-white text-black">
+                                <div className="dark:text-white text-black hidden lg:block">
                                     ${formatNumber(data.value)}
                                 </div>
                             </>
