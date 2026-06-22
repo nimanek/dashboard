@@ -32,7 +32,7 @@ export const Header = () => {
             <img className="rounded-full hidden md:block" src="https://placehold.co/50" alt="" />
 
 
-            <form ref={searchRef} className={`flex rounded-4xl dark:bg-[#3f4247] bg-white items-center p-2 gap-2 select-none w-10 md:w-70 ml-[2%] md:ml-0 transition-all ${isSearchOpen ? "w-50" : ''}`}>
+            <form autoFocus ref={searchRef} className={`flex rounded-4xl dark:bg-[#3f4247] bg-white items-center p-2 gap-2 select-none w-10 md:w-70 ml-[2%] md:ml-0 transition-all ${isSearchOpen ? "w-50" : ''}`}>
                     <HiMagnifyingGlass className="shrink-0" onClick={()=> setIsSearchOpen(true)} color="#99a1af"/>
                 <input className={`bg-transparent outline-0 text-sm placeholder-gray-400 dark:text-gray-400 w-full`} placeholder="Search..." type="search" />
             </form>
